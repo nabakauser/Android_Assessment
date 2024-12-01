@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    tools:context=".fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="24dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/transparent"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/light_grey"
+                    app:strokeWidth="1dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/light_grey10"
+                        android:padding="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/uiCvImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvImages"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_profile" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvHello"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:padding="4dp"
+                            android:text="Hello"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:padding="4dp"
+                            android:text="Thomas Shelby..."
+                            android:textColor="#252525"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                            app:layout_constraintTop_toBottomOf="@+id/uiTvHello" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvQrCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="2dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/uiCvImage"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvQrCode"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_qr_code" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvAccCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:layout_margin="16dp"
+                    android:labelFor="@+id/CardDetails"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvProfile">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/green_gradient">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/uiRvBank"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:itemCount="4"
+                            tools:listitem="@layout/card_details_layout" />
+
+                        <View
+                            android:id="@+id/uiVwOne"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/white"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiRvBank" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvTicketBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/transparent"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="@id/uiCvAccCard"
+                    app:layout_constraintStart_toStartOf="@id/uiCvAccCard"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvAccCard"
+                    app:strokeColor="@color/light_grey10"
+                    app:strokeWidth="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvTicketBooking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:text="Ticket Booking"
+                            android:textColor="@color/text_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatTextView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvFlight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvBus"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/uiIvFlight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                app:srcCompat="@drawable/ic_flight" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvFlight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Flight"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@id/uiCvFlight"
+                            app:layout_constraintStart_toStartOf="@id/uiCvFlight"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvFlight"></androidx.appcompat.widget.AppCompatTextView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvBus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvTrain"
+                            app:layout_constraintStart_toEndOf="@id/uiCvFlight"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/uiIvBus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                app:srcCompat="@drawable/ic_bus" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvBus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Bus"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@id/uiCvBus"
+                            app:layout_constraintStart_toStartOf="@id/uiCvBus"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvBus"></androidx.appcompat.widget.AppCompatTextView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvTrain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvHotel"
+                            app:layout_constraintStart_toEndOf="@id/uiCvBus"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/uiIvTrain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                app:srcCompat="@drawable/ic_train" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvTrain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Train"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@id/uiCvTrain"
+                            app:layout_constraintStart_toStartOf="@id/uiCvTrain"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvTrain"></androidx.appcompat.widget.AppCompatTextView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvHotel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/uiCvTrain"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
+                            app:strokeWidth="0dp">
+
+                            <ImageView
+                                android:id="@+id/uiIvHotel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp"
+                                app:srcCompat="@drawable/ic_hotel" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvHotel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:text="Hotel"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="@id/uiCvHotel"
+                            app:layout_constraintStart_toStartOf="@id/uiCvHotel"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvHotel"></androidx.appcompat.widget.AppCompatTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvReceiveMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="@id/uiCvTicketBooking"
+                    app:layout_constraintStart_toStartOf="@id/uiCvTicketBooking"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvTicketBooking"
+                    app:strokeWidth="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvReceiveMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:text="Receive Money"
+                            android:textColor="@color/text_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvUpiId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UPI ID: 9876543210@qpay"
+                            android:textColor="@color/black_90"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/uiTvReceiveMoney"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvReceiveMoney" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnQRCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:backgroundTint="@color/light_grey20"
+                            android:text="QR Code"
+                            android:textColor="@color/black_90"
+                            android:textSize="12sp"
+                            app:icon="@drawable/ic_qr_code"
+                            app:iconPadding="2dp"
+                            app:iconTint="@color/black_90"
+                            app:layout_constraintEnd_toStartOf="@id/uiBtnCopy"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvUpiId" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnCopy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:backgroundTint="@color/light_grey20"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="4dp"
+                            android:text="Copy"
+                            android:textColor="@color/black_90"
+                            android:textSize="12sp"
+                            app:icon="@drawable/ic_copy"
+                            app:iconPadding="2dp"
+                            app:iconTint="@color/black_90"
+                            app:layout_constraintBottom_toBottomOf="@id/uiBtnQRCode"
+                            app:layout_constraintStart_toEndOf="@id/uiBtnQRCode"
+                            app:layout_constraintTop_toTopOf="@id/uiBtnQRCode" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:backgroundTint="@color/light_grey20"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="4dp"
+                            android:text="Share"
+                            android:textColor="@color/black_90"
+                            android:textSize="12sp"
+                            app:icon="@drawable/ic_share"
+                            app:iconPadding="2dp"
+                            app:iconTint="@color/black_90"
+                            app:layout_constraintBottom_toBottomOf="@id/uiBtnCopy"
+                            app:layout_constraintStart_toEndOf="@id/uiBtnCopy"
+                            app:layout_constraintTop_toTopOf="@id/uiBtnCopy" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvMore"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="12dp"
+                            android:backgroundTint="@android:color/white"
+                            app:cardCornerRadius="24dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiBtnShare"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/uiBtnShare"
+                            app:layout_constraintTop_toTopOf="@id/uiBtnShare"
+                            app:strokeColor="@color/light_grey10"
+                            app:strokeWidth="1dp">
+
+                            <ImageView
+                                android:id="@+id/uiIvMenu"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="8dp"
+                                android:src="@drawable/ic_more"
+                                app:tint="@color/black_90" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvBillPayments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvReceiveMoney"
+                    app:strokeColor="@color/light_grey10"
+                    app:strokeWidth="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/uiTvBillPayments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:padding="4dp"
+                            android:text="Bill Payments"
+                            android:textColor="@color/text_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvMobileRecharge"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvElectricityPayments"
+                            app:layout_constraintStart_toStartOf="@id/uiTvBillPayments"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvBillPayments"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiBtnMobileRecharge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="Mobile \nRecharge"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_mobile_recharge"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvElectricityPayments"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiCvMobileRecharge"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/uiCvMobileRecharge"
+                            app:layout_constraintTop_toTopOf="@id/uiCvMobileRecharge"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiElectricityPayments"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="Electricity \nPayments"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_electricity"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvCredit"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvDth"
+                            app:layout_constraintStart_toStartOf="@id/uiCvMobileRecharge"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvMobileRecharge"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiBtnCredit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="Credit Card \nBills"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_credit_card"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvDth"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiCvCredit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/uiCvCredit"
+                            app:layout_constraintTop_toTopOf="@id/uiCvCredit"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiBtnDth"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="DTH/ \nCable TV"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_dth_tv"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvGas"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="24dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toStartOf="@id/uiCvMorePayments"
+                            app:layout_constraintStart_toStartOf="@id/uiCvCredit"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvCredit"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiBtnGas"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="Gas \n Cylinder"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_gas"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvMorePayments"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiCvGas"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/uiCvGas"
+                            app:layout_constraintTop_toTopOf="@id/uiCvGas"
+                            app:strokeWidth="0dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/uiBtnMore"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white"
+                                android:text="More \nPayments"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/black_90"
+                                android:textSize="12sp"
+                                app:cornerRadius="16dp"
+                                app:icon="@drawable/ic_more_payments"
+                                app:iconPadding="8dp"
+                                app:iconSize="32dp"
+                                app:iconTint="@color/dark_green" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

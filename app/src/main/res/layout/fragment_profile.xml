@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="24dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvProfileCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvProfile"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="16dp"
+                            app:cardCornerRadius="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvProfileImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_launcher_background" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:text="Thomas Shelby"
+                            android:textColor="@color/black_90"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/uiCvProfile"
+                            app:layout_constraintTop_toTopOf="@id/uiCvProfile" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvQpayId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:drawableStart="@drawable/ic_upi"
+                            android:drawableEnd="@drawable/ic_copy"
+                            android:drawablePadding="4dp"
+                            android:gravity="center"
+                            android:text="8778214386@qpay"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/uiCvProfile"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvProfileName" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_arrow_right"
+                            android:tint="@color/text_grey"
+                            app:layout_constraintBottom_toBottomOf="@id/uiCvProfile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/uiTvQpayId"
+                            app:layout_constraintTop_toTopOf="@id/uiCvProfile" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvWalletBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvProfileCard">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="24dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvWalletBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wallet Balance"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvWalletBalanceRupees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_visibility_off"
+                            android:drawablePadding="4dp"
+                            android:text="₹2,36,000.47"
+                            android:textColor="@color/black_90"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/uiTvWalletBalance"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvWalletBalance" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvAddMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="32dp"
+                            android:layout_marginTop="2dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiTvWalletBalanceRupees"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/uiTvWalletBalance"
+                            app:strokeColor="@color/dark_green"
+                            app:strokeWidth="2dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvAddMoney"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_add_money"
+                                android:drawablePadding="4dp"
+                                android:drawableTint="@color/dark_green"
+                                android:gravity="center"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp"
+                                android:text="Add Money"
+                                android:textColor="@color/dark_green"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvReceivingMoney"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvWalletBalance">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="16dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvReceivingMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receiving money in"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/uiIvReceivingMoneyLogo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:src="@drawable/ic_sbi"
+                            app:layout_constraintStart_toStartOf="@id/uiTvReceivingMoney"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvReceivingMoney" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvReceivingMoneyAcc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:text="xxxx 3941"
+                            android:textColor="@color/black_90"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/uiIvReceivingMoneyLogo"
+                            app:layout_constraintTop_toTopOf="@id/uiIvReceivingMoneyLogo" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvSbi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State Bank of India"
+                            android:textColor="@color/text_grey"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@id/uiTvReceivingMoneyAcc"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvReceivingMoneyAcc" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvManage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="32dp"
+                            app:layout_constraintBottom_toBottomOf="@id/uiTvSbi"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/uiTvReceivingMoney"
+                            app:strokeColor="@color/dark_green"
+                            app:strokeWidth="2dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvManage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_manage"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/dark_green"
+                                android:gravity="center"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="8dp"
+                                android:text="Manage"
+                                android:textColor="@color/dark_green"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <View
+                            android:id="@+id/uiVwTwo"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/light_grey10"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvSbi" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvUpi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/light_grey"
+                            android:drawableStart="@drawable/ic_upi"
+                            android:drawableEnd="@drawable/ic_copy"
+                            android:drawablePadding="8dp"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:text="8778214386@qpay"
+                            android:textColor="#999999"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiVwTwo" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- add bank card -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvSecurity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvReceivingMoney">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvSecurity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:text="Security &amp; Protection"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvScreenLock"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvSecurity"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvFingerPrint"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_fingerprint"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvScreenLock"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Screen lock"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvBiometric"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvFingerPrint"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvFingerPrint" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvBiometric"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Biometric &amp; Screen locks"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvFingerPrint"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvFingerPrint"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvScreenLock" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvRightArrow"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvBiometric"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvScreenLock" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvChangePassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvScreenLock"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvChangePassword"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_password"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvChangePassword"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Change Password"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvResetPassword"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvChangePassword"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvChangePassword" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvResetPassword"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Reset your app password"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvChangePassword"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvChangePassword"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvChangePassword" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvResetArrow"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvResetPassword"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvChangePassword" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvSecurity">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvSettings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:text="Settings &amp; Preferences"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvLanguage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvSettings"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvLanguage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_language"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvLanguages"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Languages"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvChooseLanguage"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvLanguage"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvLanguage" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvChooseLanguage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Choose Language: English"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvLanguage"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvLanguage"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvLanguages" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvRightArrowTwo"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvLanguage"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvLanguages" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvPermissions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvLanguage"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvPermissions"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_permission"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvPermission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Permissions"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvManagePermission"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvPermissions"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvPermissions" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvManagePermission"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Manage data sharing settings"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvPermissions"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvPermissions"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvPermission" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvResetArrowThree"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvPermission"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvManagePermission" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvHelpSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvSettings">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvHelpSupport"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="16dp"
+                            android:layout_marginHorizontal="24dp"
+                            android:text="Help &amp; Support"
+                            android:textColor="@color/text_grey"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvHelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvHelpSupport"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvHelp"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_help"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvHelp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Help"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvHelpText"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvHelp"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvHelp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvHelpText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Biometric &amp; Screen Locks"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvHelp"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvHelp"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvHelp" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvHelpText"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvHelp" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvReportFraud"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvHelp"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvFraud"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_report"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvFraud"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Report Fraud"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvReportFraudText"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvFraud"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvFraud" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvReportFraudText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Reset your app password"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvFraud"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvFraud"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvFraud" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvFraud"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvReportFraudText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvPolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvReportFraud"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvPolicy"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_policy"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvPolicy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="Privacy Policy"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvPolicyText"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvPolicy"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvPolicy" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvPolicyText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Reset your app password"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvPolicy"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvPolicy"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvPolicy" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvPolicy"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvPolicyText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/uiCvAbout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginVertical="16dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiCvPolicy"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:strokeWidth="0dp">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvAboutUs"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_about"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvAboutUs"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:text="About Us"
+                                    android:textColor="@color/black_90"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@id/uiTvAboutUsText"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvAboutUs"
+                                    app:layout_constraintTop_toTopOf="@id/uiIvAboutUs" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/uiTvAboutUsText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:background="@color/white"
+                                    android:drawablePadding="10dp"
+                                    android:enabled="false"
+                                    android:gravity="center"
+                                    android:text="Reset your app password"
+                                    android:textColor="@color/text_grey"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiIvAboutUs"
+                                    app:layout_constraintStart_toEndOf="@id/uiIvAboutUs"
+                                    app:layout_constraintTop_toBottomOf="@id/uiTvAboutUs" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/text_grey"
+                                    app:layout_constraintBottom_toBottomOf="@id/uiTvAboutUs"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="@id/uiTvAboutUsText" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvHelpSupport">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/uiBtnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="16dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:backgroundTint="@color/red_10"
+                        android:text="Logout"
+                        app:iconGravity="textStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:cornerRadius="8dp"
+                        app:icon="@drawable/ic_logout"
+                        app:iconTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
