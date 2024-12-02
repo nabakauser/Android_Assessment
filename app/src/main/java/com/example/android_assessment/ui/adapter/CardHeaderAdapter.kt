@@ -1,4 +1,4 @@
-package com.example.android_assessment.adapter
+package com.example.android_assessment.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

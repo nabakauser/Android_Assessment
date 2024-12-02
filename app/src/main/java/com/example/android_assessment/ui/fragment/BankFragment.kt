@@ -1,11 +1,12 @@
-package com.example.android_assessment.fragment
+package com.example.android_assessment.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.android_assessment.adapter.BankDetailsAdapter
+import com.example.android_assessment.ui.adapter.BankDetailsAdapter
+import com.example.android_assessment.data.local.TabText
 import com.example.android_assessment.databinding.FragmentBankBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,7 +34,3 @@ class BankFragment : Fragment() {
         }.attach()
     }
 }
-data class TabText(
-    val index : Int,
-    val title: String,
-)

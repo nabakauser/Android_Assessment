@@ -1,4 +1,4 @@
-package com.example.android_assessment.fragment
+package com.example.android_assessment.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

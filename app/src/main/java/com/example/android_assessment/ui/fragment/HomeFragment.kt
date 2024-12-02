@@ -1,4 +1,4 @@
-package com.example.android_assessment.fragment
+package com.example.android_assessment.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,18 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.android_assessment.R
-import com.example.android_assessment.adapter.CardHeaderAdapter
 import com.example.android_assessment.data.local.CardDetails
 import com.example.android_assessment.databinding.FragmentHomeBinding
+import com.example.android_assessment.ui.adapter.CardHeaderAdapter
+import com.example.android_assessment.ui.adapter.TransactionsAdapter
+import com.example.android_assessment.ui.viewModel.HomeViewModel
 import com.google.android.material.button.MaterialButton
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
     private var binding: FragmentHomeBinding? = null
+    private val viewModel: HomeViewModel by viewModel()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +30,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpAccountCards()
+        setUpTransactions()
     }
 
     private fun setUpAccountCards() {
@@ -98,6 +104,15 @@ class HomeFragment : Fragment() {
                 binding?.uiBtnStatement?.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_statement)
                 binding?.uiBtnTransfer?.visibility = View.VISIBLE
             }
+        }
+    }
+
+    private fun setUpTransactions() {
+        viewModel.userDetails.observe(viewLifecycleOwner) { userDetails ->
+            binding?.uiRvRecentTransactions?.adapter = TransactionsAdapter(
+                context = requireContext(),
+                userDetails = userDetails
+            )
         }
     }
 }

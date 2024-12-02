@@ -54,4 +54,15 @@ dependencies {
 
     implementation(libs.glide)
 
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+
+    implementation(libs.koin.core)
+    implementation(libs.koin.androidx.scope)
+    implementation(libs.koin.androidx.viewmodel)
+    implementation(libs.koin.android)
+
 }

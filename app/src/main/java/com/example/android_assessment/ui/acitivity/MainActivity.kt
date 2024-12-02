@@ -1,4 +1,4 @@
-package com.example.android_assessment.acitivity
+package com.example.android_assessment.ui.acitivity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,18 +6,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.android_assessment.fragment.BankFragment
-import com.example.android_assessment.fragment.HomeFragment
 import com.example.android_assessment.R
 import com.example.android_assessment.databinding.ActivityMainBinding
-import com.example.android_assessment.fragment.ProfileFragment
+import com.example.android_assessment.ui.fragment.BankFragment
+import com.example.android_assessment.ui.fragment.HomeFragment
+import com.example.android_assessment.ui.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
-    private var binding : ActivityMainBinding? = null
 
     private val homeFragment by lazy { HomeFragment() }
     private val bankFragment by lazy { BankFragment() }
     private val profileFragment by lazy { ProfileFragment() }
+
+    private var binding : ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
+        setUpFragment()
         setUpBottomNavigation()
+    }
+
+    private fun setUpFragment() {
+        changeFragment(homeFragment, "homeFragment")
     }
 
     private fun setUpBottomNavigation(){

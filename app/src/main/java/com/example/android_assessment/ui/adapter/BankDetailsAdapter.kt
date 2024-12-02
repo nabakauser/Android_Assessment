@@ -1,9 +1,9 @@
-package com.example.android_assessment.adapter
+package com.example.android_assessment.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.android_assessment.fragment.AccountsFragment
-import com.example.android_assessment.fragment.CardFragment
+import com.example.android_assessment.ui.fragment.AccountsFragment
+import com.example.android_assessment.ui.fragment.CardFragment
 
 class BankDetailsAdapter(
     fragment: Fragment
