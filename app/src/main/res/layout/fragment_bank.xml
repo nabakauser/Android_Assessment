@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_grey"
     tools:context=".fragment.BankFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +15,7 @@
             android:id="@+id/uiAppBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/light_grey"
             app:layout_constraintBottom_toTopOf="@+id/uiViewPage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +25,7 @@
                 android:id="@+id/uiToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/transparent"
                 android:gravity="center"
                 android:paddingTop="20dp">
 
@@ -68,6 +71,7 @@
                         android:id="@+id/uiTabs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/transparent"
                         app:tabGravity="fill"
                         app:tabMode="fixed"
                         app:tabTextColor="@color/dark_green"
@@ -86,7 +90,7 @@
             android:id="@+id/uiViewPage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

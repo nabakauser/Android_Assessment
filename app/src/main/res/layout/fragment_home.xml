@@ -64,7 +64,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
-                            android:padding="4dp"
                             android:text="Hello"
                             android:textColor="@color/text_grey"
                             android:textSize="14sp"
@@ -74,10 +73,9 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvUserName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="97dp"
+                            android:layout_height="17dp"
                             android:layout_marginStart="8dp"
-                            android:padding="4dp"
                             android:text="Thomas Shelby..."
                             android:textColor="#252525"
                             android:textSize="12sp"
@@ -137,7 +135,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:itemCount="4"
-                            tools:listitem="@layout/card_details_layout" />
+                            tools:listitem="@layout/card_header_layout" />
 
                         <View
                             android:id="@+id/uiVwOne"
@@ -147,6 +145,264 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiRvBank" />
+
+                        <TextView
+                            android:id="@+id/uiTvAccBalanceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="8dp"
+                            android:text="Account Balance"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/uiTvAccBalanceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_visibility_off"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/white"
+                            android:text="₹ 2,34,000.47"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="@id/uiTvAccBalanceTitle"
+                            app:layout_constraintStart_toStartOf="@id/uiTvAccBalanceTitle"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvAccBalanceTitle"
+                            tools:visibility="gone" />
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/uiGrpWallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:constraint_referenced_ids="uiTvAccBalanceTitle, uiTvAccBalanceText"
+                            tools:visibility="visible" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnLinkAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:backgroundTint="@color/transparent"
+                            android:text="Link Account"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:icon="@drawable/ic_link_account"
+                            app:iconGravity="textStart"
+                            app:iconSize="12dp"
+                            app:iconTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp"
+                            tools:visibility="gone" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnNewAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:text="New Account"
+                            android:textColor="@color/dark_green"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            app:icon="@drawable/ic_add_money"
+                            app:iconGravity="textStart"
+                            app:iconSize="12dp"
+                            app:iconTint="@color/dark_green"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiBtnLinkAccount"
+                            app:strokeColor="@color/dark_green"
+                            app:strokeWidth="1dp"
+                            tools:visibility="visible" />
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/uiGrpNewAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            app:constraint_referenced_ids="uiBtnLinkAccount, uiBtnNewAccount"
+                            tools:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/uiTvAccountNumberTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="16dp"
+                            android:paddingTop="16dp"
+                            android:text="Account Number"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            android:visibility="gone"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiVwOne"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/uiTvAccountNumberText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_visibility_off"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/white"
+                            android:paddingStart="16dp"
+                            android:text="XXXXXXXXXXXXXXXX"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvAccountNumberTitle"/>
+
+                        <TextView
+                            android:id="@+id/uiTvBankTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="16dp"
+                            android:paddingEnd="16dp"
+                            android:text="Bank"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiVwOne"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <TextView
+                            android:id="@+id/uiTvBankText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="16dp"
+                            android:text="State Bank of India"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvBankTitle"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <TextView
+                            android:id="@+id/uiTvIfscCodeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="16dp"
+                            android:paddingTop="24dp"
+                            android:text="IFSC Code"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvAccountNumberText"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <TextView
+                            android:id="@+id/uiTvIfscCodeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="16dp"
+                            android:text="KKBK0008798"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvIfscCodeTitle"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <TextView
+                            android:id="@+id/uiTvAccountBalanceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="24dp"
+                            android:paddingEnd="16dp"
+                            android:text="Account Balance"
+                            android:textColor="@color/white"
+                            android:textSize="10sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvBankText"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <TextView
+                            android:id="@+id/uiTvAccountBalanceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_visibility_off"
+                            android:drawablePadding="4dp"
+                            android:drawableTint="@color/white"
+                            android:paddingEnd="16dp"
+                            android:text="₹2,36,000.47"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvAccountBalanceTitle"
+                            android:visibility="gone"
+                            tools:visibility="visible"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnStatement"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/transparent"
+                            android:text="Add Money"
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:icon="@drawable/ic_statement"
+                            app:iconGravity="textStart"
+                            app:iconSize="12dp"
+                            app:iconTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/uiBtnTransfer"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintWidth_percent="0.45"
+                            app:strokeColor="@color/white"
+                            app:strokeWidth="1dp"
+                            tools:visibility="visible"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uiBtnTransfer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:text="Transfer"
+                            android:layout_marginBottom="8dp"
+                            android:textColor="@color/dark_green"
+                            android:textSize="12sp"
+                            app:icon="@drawable/ic_transfer"
+                            app:iconGravity="textStart"
+                            app:iconSize="12dp"
+                            app:iconTint="@color/dark_green"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/uiBtnStatement"
+                            app:layout_constraintWidth_percent="0.45"
+                            app:strokeColor="@color/dark_green"
+                            app:strokeWidth="1dp"
+                            tools:visibility="visible"/>
+
+                        <androidx.constraintlayout.widget.Group
+                            android:id="@+id/uiGrpBankDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:constraint_referenced_ids="uiTvBankTitle, uiTvBankText, uiTvAccountNumberTitle, uiTvAccountNumberText, uiTvAccountBalanceTitle, uiTvAccountBalanceText, uiTvIfscCodeTitle, uiTvIfscCodeText"
+                            android:visibility="gone"
+                            tools:visibility="gone" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -537,7 +793,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Credit Card \nBills"
+                                android:text="Credit Card Bills"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -587,10 +843,10 @@
                             android:layout_marginBottom="24dp"
                             app:cardBackgroundColor="@color/white"
                             app:cardElevation="4dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@id/uiCvMorePayments"
                             app:layout_constraintStart_toStartOf="@id/uiCvCredit"
                             app:layout_constraintTop_toBottomOf="@id/uiCvCredit"
-                            app:layout_constraintBottom_toBottomOf="parent"
                             app:strokeWidth="0dp">
 
                             <com.google.android.material.button.MaterialButton
@@ -598,7 +854,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Gas \n Cylinder"
+                                android:text="Gas \nCylinder"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -639,6 +895,55 @@
                                 app:iconTint="@color/dark_green" />
 
                         </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiCvRecentTransactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:backgroundTint="@color/transparent"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uiCvBillPayments"
+                    app:strokeColor="@color/light_grey10"
+                    app:strokeWidth="2dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:id="@+id/uiTvRecentTransactions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Recent Transactions"
+                            android:textColor="@color/text_grey"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/uiRvRecentTransactions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/transparent"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/uiTvRecentTransactions"
+                            app:layout_constraintVertical_bias="0.0"
+                            tools:itemCount="4"
+                            tools:listitem="@layout/recent_transactions_item_layout" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
