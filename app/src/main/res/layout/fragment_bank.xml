@@ -58,7 +58,7 @@
                         android:id="@+id/uiToolbarTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bank"
+                        android:text="@string/str_bank"
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:textStyle="bold"

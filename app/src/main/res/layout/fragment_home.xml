@@ -64,7 +64,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
-                            android:text="Hello"
+                            android:text="@string/str_hello"
                             android:textColor="@color/text_grey"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -76,7 +76,7 @@
                             android:layout_width="97dp"
                             android:layout_height="17dp"
                             android:layout_marginStart="8dp"
-                            android:text="Thomas Shelby..."
+                            android:text="@string/str_thomas_shelby"
                             android:textColor="#252525"
                             android:textSize="12sp"
                             android:textStyle="bold"
@@ -146,12 +146,13 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiRvBank" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccBalanceTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="8dp"
-                            android:text="Account Balance"
+                            android:paddingEnd="0dp"
+                            android:text="@string/str_account_balance"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:visibility="visible"
@@ -161,18 +162,18 @@
                             app:layout_constraintTop_toTopOf="parent"
                             tools:visibility="gone" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccBalanceText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_visibility_off"
                             android:drawablePadding="4dp"
                             android:drawableTint="@color/white"
-                            android:text="₹ 2,34,000.47"
+                            android:text="@string/str_2_36_000_47"
                             android:textColor="@color/white"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:visibility="visible"
+                            app:drawableEndCompat="@drawable/ic_visibility_off"
                             app:layout_constraintEnd_toEndOf="@id/uiTvAccBalanceTitle"
                             app:layout_constraintStart_toStartOf="@id/uiTvAccBalanceTitle"
                             app:layout_constraintTop_toBottomOf="@id/uiTvAccBalanceTitle"
@@ -192,7 +193,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/transparent"
-                            android:text="Link Account"
+                            android:text="@string/str_link_account"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:visibility="gone"
@@ -213,7 +214,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/white"
-                            android:text="New Account"
+                            android:text="@string/str_new_account"
                             android:textColor="@color/dark_green"
                             android:textSize="12sp"
                             android:visibility="gone"
@@ -236,131 +237,139 @@
                             app:constraint_referenced_ids="uiBtnLinkAccount, uiBtnNewAccount"
                             tools:visibility="gone" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccountNumberTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="16dp"
                             android:paddingTop="16dp"
-                            android:text="Account Number"
+                            android:paddingEnd="0dp"
+                            android:text="@string/str_account_number"
                             android:textColor="@color/white"
-                            android:textSize="10sp"
+                            android:textSize="11sp"
                             android:visibility="gone"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiVwOne"
                             tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccountNumberText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_visibility_off"
                             android:drawablePadding="4dp"
                             android:drawableTint="@color/white"
                             android:paddingStart="16dp"
-                            android:text="XXXXXXXXXXXXXXXX"
+                            android:paddingEnd="0dp"
+                            android:text="@string/str_xxxxxxxxxxxxxxxx"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold"
                             android:visibility="gone"
-                            tools:visibility="visible"
+                            app:drawableEndCompat="@drawable/ic_visibility_off"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/uiTvAccountNumberTitle"/>
+                            app:layout_constraintTop_toBottomOf="@id/uiTvAccountNumberTitle"
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvBankTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingStart="0dp"
                             android:paddingTop="16dp"
                             android:paddingEnd="16dp"
-                            android:text="Bank"
+                            android:text="@string/str_bank"
                             android:textColor="@color/white"
-                            android:textSize="10sp"
+                            android:textSize="11sp"
+                            android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiVwOne"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvBankText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingStart="0dp"
                             android:paddingEnd="16dp"
-                            android:text="State Bank of India"
+                            android:text="@string/str_state_bank_of_india"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold"
+                            android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiTvBankTitle"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvIfscCodeTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="16dp"
                             android:paddingTop="24dp"
-                            android:text="IFSC Code"
+                            android:paddingEnd="0dp"
+                            android:text="@string/str_ifsc_code"
                             android:textColor="@color/white"
-                            android:textSize="10sp"
+                            android:textSize="11sp"
+                            android:visibility="gone"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiTvAccountNumberText"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvIfscCodeText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="16dp"
-                            android:text="KKBK0008798"
+                            android:paddingEnd="0dp"
+                            android:text="@string/str_kkbk0008798"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold"
+                            android:visibility="gone"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiTvIfscCodeTitle"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccountBalanceTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:paddingStart="0dp"
                             android:paddingTop="24dp"
                             android:paddingEnd="16dp"
-                            android:text="Account Balance"
+                            android:text="@string/str_account_balance"
                             android:textColor="@color/white"
-                            android:textSize="10sp"
+                            android:textSize="11sp"
+                            android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiTvBankText"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvAccountBalanceText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:drawableEnd="@drawable/ic_visibility_off"
                             android:drawablePadding="4dp"
                             android:drawableTint="@color/white"
+                            android:paddingStart="0dp"
                             android:paddingEnd="16dp"
-                            android:text="₹2,36,000.47"
+                            android:text="@string/str_2_36_000_47"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold"
+                            android:visibility="gone"
+                            app:drawableEndCompat="@drawable/ic_visibility_off"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/uiTvAccountBalanceTitle"
-                            android:visibility="gone"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/uiBtnStatement"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/transparent"
-                            android:text="Add Money"
                             android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/transparent"
+                            android:text="@string/str_add_money"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:icon="@drawable/ic_statement"
@@ -373,15 +382,15 @@
                             app:layout_constraintWidth_percent="0.45"
                             app:strokeColor="@color/white"
                             app:strokeWidth="1dp"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/uiBtnTransfer"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:backgroundTint="@color/white"
-                            android:text="Transfer"
                             android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/white"
+                            android:text="@string/str_transfer"
                             android:textColor="@color/dark_green"
                             android:textSize="12sp"
                             app:icon="@drawable/ic_transfer"
@@ -394,14 +403,14 @@
                             app:layout_constraintWidth_percent="0.45"
                             app:strokeColor="@color/dark_green"
                             app:strokeWidth="1dp"
-                            tools:visibility="visible"/>
+                            tools:visibility="visible" />
 
                         <androidx.constraintlayout.widget.Group
                             android:id="@+id/uiGrpBankDetails"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:constraint_referenced_ids="uiTvBankTitle, uiTvBankText, uiTvAccountNumberTitle, uiTvAccountNumberText, uiTvAccountBalanceTitle, uiTvAccountBalanceText, uiTvIfscCodeTitle, uiTvIfscCodeText"
                             android:visibility="gone"
+                            app:constraint_referenced_ids="uiTvBankTitle, uiTvBankText, uiTvAccountNumberTitle, uiTvAccountNumberText, uiTvAccountBalanceTitle, uiTvAccountBalanceText, uiTvIfscCodeTitle, uiTvIfscCodeText"
                             tools:visibility="gone" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -431,11 +440,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="16dp"
-                            android:text="Ticket Booking"
+                            android:text="@string/str_ticket_booking"
                             android:textColor="@color/text_grey"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatTextView>
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/uiCvFlight"
@@ -448,7 +457,7 @@
                             app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
                             app:strokeWidth="0dp">
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvFlight"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -462,12 +471,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="8dp"
-                            android:text="Flight"
+                            android:text="@string/str_flight"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="@id/uiCvFlight"
                             app:layout_constraintStart_toStartOf="@id/uiCvFlight"
-                            app:layout_constraintTop_toBottomOf="@id/uiCvFlight"></androidx.appcompat.widget.AppCompatTextView>
+                            app:layout_constraintTop_toBottomOf="@id/uiCvFlight" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/uiCvBus"
@@ -480,7 +489,7 @@
                             app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
                             app:strokeWidth="0dp">
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvBus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -494,12 +503,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="8dp"
-                            android:text="Bus"
+                            android:text="@string/str_bus"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="@id/uiCvBus"
                             app:layout_constraintStart_toStartOf="@id/uiCvBus"
-                            app:layout_constraintTop_toBottomOf="@id/uiCvBus"></androidx.appcompat.widget.AppCompatTextView>
+                            app:layout_constraintTop_toBottomOf="@id/uiCvBus" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/uiCvTrain"
@@ -512,7 +521,7 @@
                             app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
                             app:strokeWidth="0dp">
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvTrain"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -526,12 +535,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="8dp"
-                            android:text="Train"
+                            android:text="@string/str_train"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="@id/uiCvTrain"
                             app:layout_constraintStart_toStartOf="@id/uiCvTrain"
-                            app:layout_constraintTop_toBottomOf="@id/uiCvTrain"></androidx.appcompat.widget.AppCompatTextView>
+                            app:layout_constraintTop_toBottomOf="@id/uiCvTrain" />
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/uiCvHotel"
@@ -544,7 +553,7 @@
                             app:layout_constraintTop_toBottomOf="@id/uiTvTicketBooking"
                             app:strokeWidth="0dp">
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvHotel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -558,12 +567,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="8dp"
-                            android:text="Hotel"
+                            android:text="@string/str_hotel"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toEndOf="@id/uiCvHotel"
                             app:layout_constraintStart_toStartOf="@id/uiCvHotel"
-                            app:layout_constraintTop_toBottomOf="@id/uiCvHotel"></androidx.appcompat.widget.AppCompatTextView>
+                            app:layout_constraintTop_toBottomOf="@id/uiCvHotel" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -590,7 +599,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
-                            android:text="Receive Money"
+                            android:text="@string/str_receive_money"
                             android:textColor="@color/text_grey"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -600,7 +609,7 @@
                             android:id="@+id/uiTvUpiId"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="UPI ID: 9876543210@qpay"
+                            android:text="@string/str_upi_id"
                             android:textColor="@color/black_90"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -613,7 +622,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
                             android:backgroundTint="@color/light_grey20"
-                            android:text="QR Code"
+                            android:text="@string/str_qr_code"
                             android:textColor="@color/black_90"
                             android:textSize="12sp"
                             app:icon="@drawable/ic_qr_code"
@@ -631,7 +640,7 @@
                             android:backgroundTint="@color/light_grey20"
                             android:paddingHorizontal="16dp"
                             android:paddingVertical="4dp"
-                            android:text="Copy"
+                            android:text="@string/str_copy"
                             android:textColor="@color/black_90"
                             android:textSize="12sp"
                             app:icon="@drawable/ic_copy"
@@ -649,7 +658,7 @@
                             android:backgroundTint="@color/light_grey20"
                             android:paddingHorizontal="16dp"
                             android:paddingVertical="4dp"
-                            android:text="Share"
+                            android:text="@string/str_share"
                             android:textColor="@color/black_90"
                             android:textSize="12sp"
                             app:icon="@drawable/ic_share"
@@ -675,7 +684,7 @@
                             app:strokeColor="@color/light_grey10"
                             app:strokeWidth="1dp">
 
-                            <ImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvMenu"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
@@ -706,13 +715,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvBillPayments"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
                             android:padding="4dp"
-                            android:text="Bill Payments"
+                            android:text="@string/str_bill_payments"
                             android:textColor="@color/text_grey"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -734,7 +743,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Mobile \nRecharge"
+                                android:text="@string/str_mobile_recharge"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -764,7 +773,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Electricity \nPayments"
+                                android:text="@string/str_electricity_payments"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -793,7 +802,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Credit Card Bills"
+                                android:text="@string/str_credit_card_bills"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -823,7 +832,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="DTH/ \nCable TV"
+                                android:text="@string/str_dth_cable_tv"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -854,7 +863,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="Gas \nCylinder"
+                                android:text="@string/str_gas_cylinder"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -884,7 +893,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="@color/white"
-                                android:text="More \nPayments"
+                                android:text="@string/str_more_payments"
                                 android:textAlignment="textStart"
                                 android:textColor="@color/black_90"
                                 android:textSize="12sp"
@@ -917,12 +926,12 @@
                         android:layout_height="match_parent"
                         android:layout_margin="8dp">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/uiTvRecentTransactions"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
-                            android:text="Recent Transactions"
+                            android:text="@string/str_recent_transactions"
                             android:textColor="@color/text_grey"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
